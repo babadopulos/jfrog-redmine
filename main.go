@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/jfrog/jfrog-cli-core/v2/plugins"
 	"github.com/jfrog/jfrog-cli-core/v2/plugins/components"
-	"github.com/jfrog/jfrog-cli-plugin-template/commands"
+	"jfrog-redmine/commands"
 )
 
 func main() {
@@ -12,8 +12,8 @@ func main() {
 
 func getApp() components.App {
 	app := components.App{}
-	app.Name = "hello-frog"
-	app.Description = "Easily greet anyone."
+	app.Name = "jfrog-redmine"
+	app.Description = "Automatically creates and closes redmine issues based on x-ray audit vulnerability report of source directory."
 	app.Version = "v0.1.0"
 	app.Commands = getCommands()
 	return app
@@ -21,5 +21,5 @@ func getApp() components.App {
 
 func getCommands() []components.Command {
 	return []components.Command{
-		commands.GetHelloCommand()}
+		commands.GetRedmineCommand()}
 }

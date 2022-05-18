@@ -1,41 +1,28 @@
-# hello-frog
+# frog-redmine
 
 ## About this plugin
-This plugin is a template and a functioning example for a basic JFrog CLI plugin. 
-This README shows the expected structure of your plugin's README.
-
-## Installation with JFrog CLI
-Installing the latest version:
-
-`$ jf plugin install hello-frog`
-
-Installing a specific version:
-
-`$ jf plugin install hello-frog@version`
-
-Uninstalling a plugin
-
-`$ jf plugin uninstall hello-frog`
+This plugin uses x-ray to scan a maven project for vulnerabilities.
+It also maintains a redmine issue tracking up to date, adding and closing known issues automatically.
 
 ## Usage
 ### Commands
-* hello
-    - Arguments:
-        - addressee - The name of the person you would like to greet.
-    - Flags:
-        - shout: Makes output uppercase **[Default: false]**
+* audit
+    - Options:
+      - --source     [Mandatory] Source code directory.
+      - --project    [Mandatory] Redmine Project identifier
+      - --dryrun     [Default: false] Show what would have been done
     - Example:
     ```
-  $ jf hello-frog hello world --shout
-  
-  NEW GREETING: HELLO WORLD!
+  $ jfrog-redmine audit --source=/path/to/maven/project --project=project-1
+
   ```
 
 ### Environment variables
-* HELLO_FROG_GREET_PREFIX - Adds a prefix to every greet **[Default: New greeting: ]**
+* REDMINE_API_ENDPOINT - Base endpoint to redmine [example: http:/127.0.0.1:8080]**
+* REDMINE_API_KEY - Redmine API key used for user authentication**
 
 ## Additional info
-None.
+[docker-compose](RELEASE.md) file used to deploy a redmine issue tracking platform locally.
 
 ## Release Notes
 The release notes are available [here](RELEASE.md).
