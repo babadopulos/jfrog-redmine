@@ -74,8 +74,8 @@ func redmineCmd(c *components.Context) error {
 	conf.APIEndpoint = os.Getenv("REDMINE_API_ENDPOINT")
 	conf.APIKey = os.Getenv("REDMINE_API_KEY")
 
-	if conf.APIKey == "" {
-		log.Error("Env REDMINE_API_KEY must be set")
+	if conf.APIEndpoint == "" {
+		log.Error("Env REDMINE_API_ENDPOINT must be set")
 	}
 
 	if conf.APIKey == "" {
