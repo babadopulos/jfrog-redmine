@@ -16,3 +16,5 @@ jfrog-redmine
 
 # IOS
 *.DS_Store
+
+target/
