@@ -1,4 +1,4 @@
-# frog-redmine
+# JFrog-redmine
 
 ## About this plugin
 This plugin uses x-ray to scan a maven project for vulnerabilities.
@@ -11,7 +11,7 @@ It also maintains a redmine issue tracking up to date, adding and closing known 
 $ go build
 ```
 
-### Install as jFrog CLi plugin
+### Install as JFrog CLi plugin
 ```
 $ mkdir -p ~/.jfrog/plugins/jfrog-redmine/bin/
 $ cp jfrog-redmine ~/.jfrog/plugins/jfrog-redmine/bin/
